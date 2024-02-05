@@ -40,6 +40,24 @@
                 app:layout_constraintEnd_toEndOf="parent" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/agreePersonal"
+            android:text="개인정보 수집 동의"
+            android:textAlignment="viewStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/agreeGps"
+            android:text="위치 기반 서비스 이용약관 동의"
+            android:textAlignment="viewStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/agreeThird"
+            android:text="제3자 정보제공 확인 및 동의"
+            android:textAlignment="viewStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
