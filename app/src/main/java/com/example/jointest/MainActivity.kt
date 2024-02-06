@@ -8,9 +8,11 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import com.example.jointest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,9 +23,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var contryCode: TextView
     private lateinit var phoneNumber: EditText
 
+    private lateinit var agreeAllCheck: CheckBox
     private lateinit var agreePersonal: Button
     private lateinit var agreeGps: Button
     private lateinit var agreeThird: Button
+
+    private lateinit var submitBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +57,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // 3. 이용약관 팝업 이벤트
+        agreeAllCheck = findViewById(R.id.agreeAllCheck)
+
         agreePersonal = findViewById(R.id.agreePersonal)
         agreeGps = findViewById(R.id.agreeGps)
         agreeThird = findViewById(R.id.agreeThird)
@@ -67,6 +74,35 @@ class MainActivity : AppCompatActivity() {
         agreeThird.setOnClickListener {
             showAlertDialog("제3자 정보제공동의", R.layout.agree_third_modal)
         }
+
+        // 4. submit
+        submitBtn = findViewById(R.id.submitBtn)
+
+        submitBtn.setOnClickListener {
+            val selectedSpinnerItem = spinner.selectedItem.toString()
+            val countryCode = contryCode.text.toString()
+            val isAgreeAllChecked = agreeAllCheck.isChecked
+
+            if (selectedSpinnerItem.equals("Contry")) {
+                showAlertAndReturn("Please select your contry")
+                return@setOnClickListener // false이므로 반환
+            }
+
+            if (!isAgreeAllChecked) {
+                showAlertAndReturn("Please enter your phone number.")
+                return@setOnClickListener // false이므로 반환
+            }
+
+
+            if (!isAgreeAllChecked) {
+                showAlertAndReturn("Please enter your phone number.")
+                return@setOnClickListener // false이므로 반환
+            }
+
+            val message = "$selectedSpinnerItem\n /: $countryCode\n /: $isAgreeAllChecked"
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
+
     }
     private fun showAlertDialog(title: String, layoutId: Int) {
         val mDialogView = LayoutInflater.from(this).inflate(layoutId, null)
@@ -80,6 +116,15 @@ class MainActivity : AppCompatActivity() {
         noButton.setOnClickListener {
             mAlertDialog.dismiss()
         }
+    }
+
+    private fun showAlertAndReturn(message: String) {
+        AlertDialog.Builder(this)
+            .setMessage(message)
+            .setPositiveButton("Confirm") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
 }
