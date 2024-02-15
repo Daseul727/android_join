@@ -2,4 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#f47439</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#888888</color>
+    <color name="colorAccentDark">#252525</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorError">#c00000</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColorPrimaryHint">#B1B1B1</color>
+    <color name="toolbarIconColor">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="home_menu_bg_light_gray">#f4f4f4</color>
+
+    <color name="transparent_81">#2B353E</color>
+
 </resources>

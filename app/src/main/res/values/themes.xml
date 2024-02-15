@@ -6,4 +6,67 @@
     </style>
 
     <style name="Theme.Jointest" parent="Base.Theme.Jointest" />
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/navigationBarColor</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowContentTransitions">true</item><!-- Shared Elements Transitions -->
+    </style>
+
+    <!-- text button -->
+    <style name="AppTheme.Button">
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="AppTheme.Button.SmallIcon">
+        <item name="android:foreground">@drawable/selector_btn_ripple_round</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">false</item>
+    </style>
+
+    <style name="AppTheme.Button.SmallIcon.titleBar">
+        <item name="android:foreground">@drawable/selector_btn_ripple_round</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">false</item>
+    </style>
+
+    <style name="AppTheme.Button.SmallIcon.menu">
+        <item name="android:foreground">@drawable/selector_btn_ripple_round</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">false</item>
+    </style>
+
+    <!-- text view -->
+    <style name="AppTheme.Text">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:ellipsize">end</item>
+        <!--<item name="android:fontFamily">@font/nanum_square_round_r</item>-->
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.Text.Title">
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLength">100</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
 </resources>

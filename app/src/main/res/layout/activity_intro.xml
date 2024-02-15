@@ -6,7 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".IntroActivity">
 
-    <TextView
+
+    <com.example.jointest.component.ui.TitleBar
+        android:id="@+id/inc_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:layout_gravity="top"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/screen_left_margin"
+        android:layout_marginEnd="@dimen/screen_right_margin"
+        android:layout_marginTop="@dimen/title_height">
+
+        <TextView
         android:text="Hello"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,5 +30,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
